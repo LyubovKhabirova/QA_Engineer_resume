@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме | Любовь Хабирова</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --accent: #0969da;
+            --bg: #f6f8fa;
+            --text: #1a1a2e;
+            --pastel-bg: #e8f0ee;
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .header-avatar {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .header-avatar img {
+            width: 100%;
+            height: 110%;
+            object-fit: cover;
+            object-position: 50% 10%;
+            display: block;
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .header-content h1 {
+            margin: 0 0 4px;
+            color: var(--primary);
+            font-size: 2.2em;
+            letter-spacing: -0.5px;
+        }
+
+        .header-content .subtitle {
+            font-size: 1.1em;
+            color: #4a4a5a;
+            margin-bottom: 6px;
+        }
+
+        .contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            font-size: 0.95em;
+            color: #57606a;
+            margin-top: 4px;
+        }
+
+        .contacts a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contacts a:hover {
+            color: #0847a0;
+            text-decoration: underline;
+        }
+
+        .contacts .phone {
+            color: #0969da;
+            font-weight: 600;
+            background: #e8f0fe;
+            padding: 2px 14px;
+            border-radius: 20px;
+            border: 1px solid #d4e2f5;
+            display: inline-block;
+        }
+
+        .contacts .phone:hover {
+            background: #0969da;
+            color: #ffffff;
+            text-decoration: none;
+            border-color: #0969da;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #0969da;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(9, 105, 218, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: #0847a0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(9, 105, 218, 0.35);
+        }
+
+        .btn-secondary {
+            background: #f0f4f8;
+            color: #1f2937;
+            border: 1.5px solid #d0d7de;
+        }
+
+        .btn-secondary:hover {
+            background: #e8ecf0;
+            border-color: #0969da;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 8px;
+            font-size: 1.35em;
+            margin-bottom: 18px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .two-columns {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .left-column {
+            flex: 2.5;
+            min-width: 0;
+        }
+
+        .left-column .item {
+            background: #fafbfc;
+            padding: 18px 20px 20px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0969da;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s;
+        }
+
+        .left-column .item:hover {
+            box-shadow: 0 4px 12px rgba(9, 105, 218, 0.08);
+        }
+
+        .left-column .item h3 {
+            font-size: 1.1em;
+            color: #0969da;
+            margin-bottom: 2px;
+        }
+
+        .left-column .item-meta {
+            font-size: 0.85em;
+            color: #6b7a8a;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .left-column .item p {
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            font-size: 0.98em;
+        }
+
+        .left-column .item strong {
+            color: #0969da;
+        }
+
+        .left-column .item i u {
+            color: #0969da;
+            text-decoration-color: #0969da;
+        }
+
+        .left-column ul.square li {
+            color: #1a1a2e;
+            font-size: 0.96em;
+        }
+
+        .right-column {
+            flex: 1.14;
+            min-width: 220px;
+            background: #eef3f2;
+            padding: 20px 22px;
+            border-radius: 10px;
+            color: #2d3f3b;
+            border: 1px solid #dce6e4;
+        }
+
+        .right-column h2 {
+            color: #3d5a54;
+            border-bottom-color: #cbd8d5;
+            font-weight: 600;
+        }
+
+        .right-column .item h3 {
+            color: #2d4a44;
+            font-size: 1.05em;
+            margin-bottom: 2px;
+        }
+
+        .right-column .company {
+            color: #3d5a54;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        .right-column .date {
+            color: #6a8580;
+            font-size: 0.82em;
+            margin-bottom: 8px;
+        }
+
+        .right-column ul.circle {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 6px;
+        }
+
+        .right-column ul.circle li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 4px;
+            font-size: 0.92em;
+            color: #2d4a44;
+        }
+
+        .right-column ul.circle li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #6a8580;
+            font-size: 16px;
+        }
+
+        .right-column .achievement {
+            margin-top: 8px;
+            font-size: 1em;
+            color: #2d4a44;
+        }
+
+        .right-column .achievement strong {
+            color: #3d5a54;
+            font-weight: 600;
+        }
+
+        .right-column .item {
+            margin-bottom: 22px;
+        }
+
+        .right-column .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item h3 {
+            margin: 5px 0;
+            color: var(--primary);
+        }
+
+        .item-meta {
+            font-size: 0.9em;
+            color: #57606a;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            cursor: default;
+        }
+
+        .skills-list li:nth-child(6n+1) {
+            background: #dbeafe;
+            color: #1e40af;
+            border-color: #bfdbfe;
+        }
+
+        .skills-list li:nth-child(6n+2) {
+            background: #d1fae5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+
+        .skills-list li:nth-child(6n+3) {
+            background: #ede9fe;
+            color: #5b21b6;
+            border-color: #ddd6fe;
+        }
+
+        .skills-list li:nth-child(6n+4) {
+            background: #fce7f3;
+            color: #9d174d;
+            border-color: #fbcfe8;
+        }
+
+        .skills-list li:nth-child(6n+5) {
+            background: #fef3c7;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+
+        .skills-list li:nth-child(6n+6) {
+            background: #fed7aa;
+            color: #9a3412;
+            border-color: #fdba74;
+        }
+
+        .skills-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        ul.square {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        ul.square li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 6px;
+        }
+
+        ul.square li::before {
+            content: "■";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 16px;
+            background: linear-gradient(135deg, #0969da, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .achievement ul.circle {
+            padding-left: 0;
+        }
+
+        .achievement ul.circle li {
+            font-size: 0.92em;
+        }
+
+        @media (max-width: 768px) {
+            .two-columns {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .right-column {
+                width: 100%;
+                padding: 16px 18px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .left-column .item {
+                padding: 14px 16px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+
+            .header-avatar img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .contacts {
+                justify-content: center;
+            }
+
+            .action-buttons {
+                justify-content: center;
+            }
+
+            header h1 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-avatar">
+                <img src="https://i127.fastpic.org/thumb/2026/0619/de/a534d4de630ad2b80c33fd5d9486b4de.jpeg" 
+                     alt="Любовь Хабирова">
+            </div>
+            <div class="header-content">
+                <h1>Любовь Хабирова</h1>
+                <div class="subtitle">QA Engineer | Тестировщик ПО</div>
+                <div class="contacts">
+                    <a href="mailto:habirovala@inbox.ru">✉ habirovala@inbox.ru</a>
+                    <a href="https://t.me/LyubovKhabirova">📱 Telegram</a>
+                    <a href="https://set.ki/account/AVPKaiS"><a href="https://set.ki/account/AVPKaiS"</a><img src="https://cdn-assets.setka.ru/setka-web/static/favicon/apple-touch-icon.f00f255850e443aa667008b7fcc7ec1a.png" alt="соцсеть" style="height: 1em; vertical-align: text-bottom;"> Сетка</a>
+		    
+                    <a href="https://github.com/LyubovKhabirova/QA_Engineer_resume">🐙 GitHub</a>
+                    <span class="phone">📞 +7 (908) 570-93-32</span>
+                </div>
+                <div class="action-buttons">
+                    <a href="https://skypro-qa133-2.yonote.ru/share/fa620401-3f50-4286-b536-e9f9c89ad762" class="btn btn-primary" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Смотреть портфолио
+                    </a>
+                    <a href="#" class="btn btn-secondary" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Скачать резюме (PDF)
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>О себе</h2>
+            <p style="font-size: 1.02em; color: #1a1a2e;">Начинающий QA Engineer с опытом тестирования пользовательских сценариев, анализа требований и ведения тестовой документации. Внимательна к деталям, разбираюсь в том, как продукт работает изнутри. Проверяю интерфейсы, логику, данные и сценарии использования. Пишу баг-репорты, работаю в Jira/TestIT, выстраиваю коммуникацию с разработчиками. Задаю вопросы на этапе обсуждения требований, чтобы находить баги как можно раньше. Ценю качественный софт и хочу делать удобные и нужные продукты. Изучаю автоматизацию тестирования на Python.</p>
+        </div>
+
+        <div class="section">
+            <h2>Навыки и инструменты (базовый уровень)</h2>
+            <ul class="skills-list">
+                <li>TestIT</li>
+                <li>Jira</li>
+                <li>UI</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JSON</li>
+                <li>Postman</li>
+                <li>REST API</li>
+                <li>API</li>
+                <li>GitHub</li>
+                <li>SOAP</li>
+                <li>SQL</li>
+                <li>pgAdmin</li>
+                <li>PostgreSQL</li>
+                <li>DevTools</li>
+                <li>Miro</li>
+                <li>VSCode</li>
+                <li>pyCharm</li>
+                <li>Selenium</li>
+                <li>JMeter</li>
+                <li>Charles Proxy</li>
+            </ul>
+        </div>
+
+        <div class="two-columns">
+            <div class="left-column">
+                <div class="section">
+                    <h2>QA-ПРОЕКТЫ</h2>
+
+                    <div class="item">
+                        <h3>Junior QA Engineer</h3>
+                        <div class="item-meta">Сентябрь 2025 — Февраль 2026</div>
+                        <p><strong>Учебный проект:</strong> "Полный цикл тестирования функционала «Личные события» в Skyeng"</p>
+                        <p>Моя задача заключалась в проведении тестирования новой функции «Личные события» в календаре учителя: ручное тестирование UI + API.</p>
+                        <p><strong>Выполненные задачи:</strong></p>
+                        <ul class="square">
+                            <li>Проведен тест-анализ требований к новому функционалу</li>
+                            <li>Составлены тест-кейсы и чек-листы для функционального и регрессионного тестирования</li>
+                            <li>Выполнено ручное тестирование UI</li>
+                            <li>Написала 52 API-тест-кейсов и реализовала их в Postman (позитивные/негативные сценарии, граничные значения)</li>
+                            <li>Провела тестирование и завела баг-репорты в Jira</li>
+                        </ul>
+                        <p><strong>Достижения:</strong></p> Составлен тест-план. Подготовлен отчет о тестировании с решением о выпуске. По результатам тестирования есть баг критической серьезности и несоответствие функциональности некоторым основным требованиям.</p>
+                    </div>
+
+                    <div class="item">
+                        <p><strong>Учебный проект:</strong> "Тестирование веб-приложения онлайн-библиотека"</p>
+                        <p>Необходимо проверить интеграцию подсистем пользователей в системе заказов.</p>
+                        <p><strong>Выполненные задачи:</strong></p>
+                        <ul class="square">
+                            <li>Провела тест-анализ требований</li>
+                            <li>Провела Smoke-тестирование</li>
+                            <li>Выполнено ручное функциональное и нефункциональное тестирование, UI, пользовательских сценариев для v1, v2, v3</li>
+                            <li>Провела регрессионное тестирование (чек-лист из 27 пунктов)</li>
+                            <li>Завела баг-репорты в Jira</li>
+                            <li>Составила итоговый отчет о тестировании</li>
+                        </ul>
+                        <p><strong>Достижения:</strong></p> Найдено 6 критических дефектов. Подготовлен отчет о тестировании веб-приложения. Даны рекомендации на основании метрик тестирования.</p>
+                    </div>
+
+                    <div class="item">
+                        <p><strong>Учебный проект:</strong> "Интеграция с API Яндекс Расписаний"</p>
+                        <p>Цель проекта: разработать инструкцию по созданию автоматизированной проверки API сервиса</p>
+                        <ul class="square">
+                            <li>Создавала персонализированные тест-скрипты и использовала готовые на JavaScript для проверок</li>
+                            <li>Проводила работу с переменными окружения</li>
+                        </ul>
+                        <p><strong>Достижения:</strong></p> Структурировала комплексный сценарий для публичного API «Яндекс.Расписания» в виде коллекции в Postman</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <h2>Профессиональный опыт</h2>
+
+                <div class="item">
+                    <h3>Оператор ЭВМ</h3>
+                    <div class="company">ФБУЗ «Центр гигиены и эпидемиологии»</div>
+                    <div class="date">02.2026 – настоящее время</div>
+                    <ul class="circle">
+                        <li>Контроль качества данных</li>
+                        <li>Проверка корректности прохождения информации по этапам обработки</li>
+                        <li>Поиск и устранение несоответствий</li>
+                        <li>Работа с внутренними информационными системами</li>
+                    </ul>
+                    <div class="achievement">
+                        <strong>Достижения:</strong> Снизила количество ошибок обработки данных за счет улучшения взаимодействия между отделами.
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h3>Специалист по информатизации</h3>
+                    <div class="company">Средняя общеобразовательная школа</div>
+                    <div class="date">2020 – 2025</div>
+                    <ul class="circle">
+                        <li>Тестирование пользовательских сценариев государственных информационных систем</li>
+                        <li>Проверка пользовательских сценариев: авторизация, ввод и изменение данных, формирование отчетов, работа с ролями</li>
+                        <li>Проверка корректности отображения и обработки данных</li>
+                        <li>Работа с пользовательскими обращениями</li>
+                        <li>Поиск, воспроизведение и описание дефектов</li>
+			<li>Проверка исправлений после обновлений</li>
+			<li>Взаимодействие с технической поддержкой</li>
+			<li>Работа с документацией</li>
+                    </ul>
+                    <div class="achievement">
+                        <strong>Достижения:</strong>
+                        <ul class="circle"style="margin-top: 4px;">
+                            <li>Обеспечила прохождение всех проверок без замечаний</li>
+                            <li>Организовала работу информационных систем без технических сбоев</li>
+                            <li>Получила практический опыт работы с системами, имеющими различные роли пользователей</li>
+			    <li>Стабильно выполнила показатели инновационной деятельности за отчетный период</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Образование</h2>
+            <div class="item" style="background: #fafbfc; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #0969da;">
+                <h3 style="color: #0969da;">Специалист</h3>
+                <div class="item-meta" style="font-size: 0.9em; color: #57606a;">Челябинский Государственный Педагогический Университет (ЧГПУ), 2004 — 2009</div>
+                <p style="margin-top: 4px;">Специальность: "Учитель технологии и предпринимательства"</p>
+                <h3 style="color: #0969da;">Профессиональная переподготовка</h3>
+                <div class="item-meta" style="font-size: 0.9em; color: #57606a;">ОАНО ДПО «Скаенг», 2026</div>
+                <p style="margin-top: 4px;">Специальность: "Инженер по тестированию"</p>
+            </div>
+        </div>
+	<div class="section">
+    	    <h2>Знание английского языка</h2>
+    	    <div class="item" style="background: #fafbfc; padding: 16px 20px; border-radius: 10px; border-left: 4px solid #0969da;">
+        	<p style="color: #0969da;">Мой уровень английского языка позволяет:</p>
+        	<ul class="square">
+            	    <li>Читать техническую документацию</li>
+            	    <li>Работать с англоязычными инструментами разработки</li>
+                    <li>Понимать профессиональную терминологию</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
