@@ -467,13 +467,11 @@
         }
 
         @media print {
-    /* Скрываем кнопки */
             .action-buttons,
             .btn {
                 display: none !important;
             }
 
-            /* Настройка фото — скрываем водяной знак */
             .header-avatar {
                 width: 100px !important;
                 height: 100px !important;
@@ -484,12 +482,36 @@
 
             .header-avatar img {
                 width: 100% !important;
-                height: 120% !important;
+                height: 110% !important;
                 object-fit: cover !important;
                 object-position: 50% 10% !important;
                 display: block !important;
             }
-}
+
+            ul, ol {
+                list-style: none !important;
+                padding-left: 0 !important;
+            }
+
+            ul.square li,
+            .right-column ul.circle li {
+                padding-left: 12px !important;
+                position: relative !important;
+                text-indent: 0 !important;
+            }
+
+            ul.square li::before,
+            .right-column ul.circle li::before {
+                content: "•" !important;
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                color: #0969da !important;
+                font-size: 1.1em !important;
+                background: none !important;
+                -webkit-text-fill-color: #0969da !important;
+            }
+        }
 
     </style>
 </head>
@@ -520,7 +542,7 @@
                         </svg>
                         Смотреть портфолио
                     </a>
-                    <a href="resume_Lyubov_Khabirova_QA.pdf" class="btn btn-secondary" download>
+                    <a href="https://raw.githubusercontent.com/LyubovKhabirova/QA_Engineer_resume/main/resume_Lyubov_Khabirova_QA.pdf" class="btn btn-secondary" download>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                             <polyline points="7 10 12 15 17 10"/>
